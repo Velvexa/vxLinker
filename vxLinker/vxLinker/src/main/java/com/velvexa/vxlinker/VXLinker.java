@@ -146,7 +146,7 @@ public class VXLinker extends JavaPlugin {
             getLogger().info("✅ " + data.size() + " kayıt " + oldType + " → " + newType + " sistemine taşındı.");
 
         } catch (Exception e) {
-            getLogger().severe("❌ Veri taşıma hatası: " + e.getMessage());
+            getLogger().severe("Veri taşıma hatası: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -156,26 +156,26 @@ public class VXLinker extends JavaPlugin {
         if (getCommand("hesapesle") != null) {
             getCommand("hesapesle").setExecutor(new LinkCommand(linkManager));
         } else {
-            getLogger().severe("❌ Komut 'hesapesle' plugin.yml içinde bulunamadı!");
+            getLogger().severe("Komut 'hesapesle' plugin.yml içinde bulunamadı!");
         }
 
         if (getCommand("hesapkaldir") != null) {
             getCommand("hesapkaldir").setExecutor(new UnlinkCommand());
         } else {
-            getLogger().warning("⚠ Komut 'hesapkaldir' plugin.yml içinde tanımlı değil, atlanıyor.");
+            getLogger().warning("Komut 'hesapkaldir' plugin.yml içinde tanımlı değil, atlanıyor.");
         }
 
         if (getCommand("vxlinkerreload") != null) {
             getCommand("vxlinkerreload").setExecutor(new VXLinkerReloadCommand());
         } else {
-            getLogger().warning("⚠ Komut 'vxlinkerreload' plugin.yml içinde tanımlı değil, atlanıyor.");
+            getLogger().warning("Komut 'vxlinkerreload' plugin.yml içinde tanımlı değil, atlanıyor.");
         }
     }
 
    
     private void initializeDiscordBot(FileConfiguration config) {
         if (!config.getBoolean("discord.enabled", false)) {
-            getLogger().info("🔕 Discord bağlantısı devre dışı bırakılmış.");
+            getLogger().info("Discord bağlantısı devre dışı bırakılmış.");
             return;
         }
 
@@ -183,15 +183,15 @@ public class VXLinker extends JavaPlugin {
         String status = config.getString("discord.status", "Minecraft ↔ Discord Linker");
 
         if (token == null || token.isEmpty() || token.equalsIgnoreCase("BURAYA_DISCORD_BOT_TOKENINI_YAZ")) {
-            getLogger().warning("⚠ Discord bot tokeni tanımlanmamış! Bot başlatılmadı.");
+            getLogger().warning("Discord bot tokeni tanımlanmamış! Bot başlatılmadı.");
             return;
         }
 
         try {
             discordBot = new DiscordBot(this, token, status);
-            getLogger().info("🤖 Discord botu başarıyla başlatıldı.");
+            getLogger().info("Discord botu başarıyla başlatıldı.");
         } catch (Exception e) {
-            getLogger().severe("❌ Discord botu başlatılamadı: " + e.getMessage());
+            getLogger().severe("Discord botu başlatılamadı: " + e.getMessage());
         }
     }
 
@@ -221,3 +221,4 @@ public class VXLinker extends JavaPlugin {
         return rewardLogManager;
     }
 }
+
