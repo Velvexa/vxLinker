@@ -1,2 +1,5 @@
 # vxLinker
-vxLinker - Minecraft ↔ Discord Hesap Eşleştirme Sistemi (dev: Velvexa)
+Minecraft ↔ Discord hesap eşleştirme eklentisi  
+Geliştirici: Velvexa | MineBazaar Development Team
+
+
