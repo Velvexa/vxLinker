@@ -1,0 +1,146 @@
+# ==========================================================
+# vxLinker - Message File
+# Minecraft ↔ Discord account linking system
+# Color codes: &a &b &c &d &e &f &7 &8 &9 etc.
+# ==========================================================
+
+# Account Linking (Player Commands)
+link:
+  header: "&8&l&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  title: "&e&l🔗 vxLinker Account Linking"
+  already-linked: "&cYour Discord account is already linked! You can’t get a new code."
+  code-active: "&6You already have an active link code!"
+  code-new: "&7Use the following code to link your Discord account:"
+  code-expired: "&c⚠ Your link code has expired. Type &e/linkaccount &cto generate a new one."
+  copied-hover: "&b📋 Click to copy the code to your clipboard"
+  copied-click: "&aCopied!"
+  usage: "&7Use this code in Discord: &f/linkaccount <code>"
+  code-generated: "&aA new link code has been generated!"
+  success: "&a✅ Your Discord account has been successfully linked!"
+  not-player: "&cThis command can only be used by players!"
+  not-found: "&cInvalid or expired code!"
+  player-offline: "&e⚠ The player is currently offline; link request queued."
+  already-active: "&6You already have an active code; cannot generate another."
+  not-linked: "&cYou haven’t linked a Discord account yet!"
+  expired: "&c⚠ This code has expired, please generate a new one."
+
+# Account Unlinking
+unlink:
+  success: "&a✅ Your account link has been successfully removed!"
+  not-linked: "&cNo account link was found."
+  discord-removed: "&7Your Minecraft ↔ Discord link has been removed."
+  error: "&cAn error occurred, the operation could not be completed."
+  notify-admin: "&7{player}'s Discord link has been removed."
+  console-success: "🧾 Discord link for player {player} has been removed."
+
+# Discord Slash Commands
+discord:
+  code-missing-title: "❌ Code not provided!"
+  code-missing-desc: "Please type `/linkaccount <code>`."
+  invalid-title: "❌ Invalid or expired code!"
+  invalid-desc: "The code may be incorrect or has expired."
+  already-linked-title: "❌ This Discord account is already linked to another Minecraft account!"
+  already-linked-desc: "Please unlink the old one before linking a new account."
+  player-already-linked-title: "❌ This Minecraft account is already linked to a Discord account!"
+  player-already-linked-desc: "A new link cannot be created."
+  success-title: "✅ Link Successful!"
+  success-desc: "Your Minecraft account has been verified: **{player}**"
+  offline-title: "⚠️ Player Offline!"
+  offline-desc: "Code is valid but the player is offline. Link queued for verification."
+  unlinked: "✅ Your Discord link has been successfully removed!"
+  role-success: "✅ Discord role assigned successfully."
+  role-fail: "❌ Failed to assign role: {error}"
+  role-missing: "⚠ Discord role not found!"
+  guild-missing: "⚠ Discord server not found!"
+  bot-disabled: "🔕 Discord bot is disabled, command unavailable."
+  verified-console: "✅ Player {player} linked their account via Discord."
+  user-not-found: "⚠ Discord user not found: {id}"
+  role-remove-error: "❌ Error while removing role: {error}"
+  slash-description: "Link your Minecraft account with your Discord account."
+  slash-option-description: "The link code you received from Minecraft"
+  slash-registered: "✅ /linkaccount command registered successfully with Discord API!"
+  slash-failed: "❌ Command registration failed: {error}"
+  webhook-fail: "⚠ Log message could not be sent to Discord: {error}"
+  webhook-success: "✅ Log message successfully sent to Discord channel."
+  webhook-missing: "⚠ Log channel not defined, message skipped."
+
+# Reward System (RewardManager)
+reward:
+  first-reward: "&a🎉 Congratulations {player}! You earned a reward for linking your Discord account!"
+  first-reward-console: "&7{player} received their first link reward."
+  interval-reward: "&a💎 Your Discord link is active! You earned a periodic reward."
+  interval-reward-console: "&7{player} received their periodic reward."
+  disabled: "&e⚠ The reward system is currently disabled."
+  already-received: "&7You’ve already received this reward!"
+  error: "&cAn error occurred while giving the reward!"
+
+# Reward Log System (RewardLogManager)
+reward-log:
+  saved: "&7🎁 Reward log entry created: &a{type} &7→ &f{player}"
+  mysql-connected: "&a✅ Reward log system connected via MySQL."
+  sqlite-connected: "&a✅ Reward log system connected to SQLite database."
+  yaml-loaded: "&a✅ Reward logs loaded from YAML file."
+  disabled: "&e⚠ Reward log system is disabled."
+  write-error: "&c❌ Failed to write reward log: {error}"
+  read-error: "&c❌ Failed to read reward log: {error}"
+
+# Re-Verify (Smart Re-Verification)
+reverify:
+  start: "&e🔄 Starting re-verification check..."
+  finished: "&a✅ Re-verification completed. Total accounts checked: {count}"
+  unlinked: "&c⚠ {player}'s Discord link has been removed (role or membership missing)."
+  notified: "&e⚠ {player} has been notified for re-verification."
+  skipped: "&7{player} verified successfully, skipped."
+  disabled: "&e🔕 Re-verification system is disabled."
+  error: "&c❌ Error occurred during re-verification: {error}"
+
+# General System Messages
+system:
+  reload: "&a✅ Configuration files reloaded!"
+  reload-detailed: "&aConfig.yml, messages.yml and reward system successfully reloaded!"
+  migration-start: "&eStarting data migration..."
+  migration-finish: "&a{count} records migrated successfully!"
+  migration-unsupported: "&cThis storage type does not support migration."
+  storage-change: "&eStorage type changed: &7{old} &f→ &a{new}"
+  error: "&cAn error occurred: &7{error}"
+  no-permission: "&cYou do not have permission to use this command!"
+  plugin-enabled: "&a✅ vxLinker successfully enabled!"
+  plugin-disabled: "&c🔴 vxLinker disabled!"
+  api-reload: "&a✅ vxLinker API successfully reloaded!"
+  update-available: "&e📦 A new vxLinker version is available: {version}"
+
+# Decorations
+decorations:
+  line: "&8&l&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  small-line: "&8&m━━━━━━━━━━━━━━━━━━━━━"
+  prefix: "[vxLinker] "
+  space: ""
+  endline: "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# File Creation / Save Errors
+storage:
+  file-create-error: "❌ Failed to create {file}: {error}"
+  file-save-error: "❌ Failed to save {file}: {error}"
+
+# Console Messages
+plugin.enabled: "✅ vxLinker successfully enabled!"
+plugin.disabled: "vxLinker disabled."
+discord.bot-stopped: "🔴 Discord bot stopped."
+rewards.system-stopped: "🎁 Reward system stopped."
+rewards.log-stopped: "🧾 Reward log system stopped."
+storage.closed: "💾 Data connection closed."
+storage.mysql: "💾 Storage method: MySQL"
+storage.sqlite: "💾 Storage method: SQLite"
+storage.yaml: "💾 Storage method: YAML"
+storage.migrate-success: "✅ {count} records migrated from {old} → {new}."
+storage.migrate-empty: "ℹ No records found to migrate ({type})"
+storage.migrate-unsupported: "❌ This storage type does not support migration."
+storage.backup-created: "📦 Backup created for old YAML data: {file}"
+storage.migrate-fail: "❌ Data migration error: {error}"
+discord.disabled: "🔕 Discord integration is disabled."
+discord.no-token: "⚠ Discord bot token not defined! Bot not started."
+discord.started: "🤖 Discord bot started successfully."
+discord.failed: "❌ Failed to start Discord bot: {error}"
+storage.type-changed: "⚠ Storage type changed! ({old} → {new})"
+command.missing: "❌ Command '{cmd}' not found in plugin.yml!"
+command.undefined: "⚠ Command '{cmd}' not defined in plugin.yml, skipping."

@@ -1,0 +1,72 @@
+name: vxLinker
+main: com.velvexa.vxlinker.VXLinker
+version: 1.1.0
+author: Velvexa
+description: >
+  Discord ↔ Minecraft account linking, verification and reward system.
+  Fully modular structure with MySQL, SQLite, and YAML support.
+api-version: 1.19
+prefix: vxLinker
+
+softdepend:
+  - Vault
+  - LuckPerms
+  - PlaceholderAPI
+
+commands:
+  hesapesle:
+    description: Discord hesabını Minecraft hesabınla eşleştirmeni sağlar.
+    usage: /hesapesle
+    aliases: [link, hesap]
+    permission: vxlinker.use
+
+  hesapkaldir:
+    description: Discord eşleşmesini kaldırır.
+    usage: /hesapkaldir
+    aliases: [unlink, unlinkaccount, kaldir]
+    permission: vxlinker.use
+
+  vxlinkerreload:
+    description: vxLinker yapılandırma dosyalarını yeniden yükler.
+    usage: /vxlinkerreload
+    aliases: [vxreload, vxrl]
+    permission: vxlinker.admin
+
+  vxlinkerinfo:
+    description: vxLinker durumu, sürüm bilgisi ve API detaylarını gösterir.
+    usage: /vxlinkerinfo
+    aliases: [vxinfo, vxver]
+    permission: vxlinker.admin
+
+  vxreverify:
+    description: Akıllı yeniden doğrulama sistemini manuel olarak başlatır.
+    usage: /vxreverify
+    aliases: [reverify, linkcheck]
+    permission: vxlinker.admin
+
+permissions:
+  vxlinker.use:
+    description: Hesap eşleştirme ve kaldırma komutlarını kullanma izni.
+    default: true
+
+  vxlinker.admin:
+    description: vxLinker yöneticisi izinleri.
+    default: op
+
+  vxlinker.rewards:
+    description: Ödül sistemine erişim izni.
+    default: op
+
+  vxlinker.reverify:
+    description: Yeniden doğrulama sistemini manuel başlatma izni.
+    default: op
+
+  vxlinker.api:
+    description: vxLinkerAPI erişimi ve yönetimi.
+    default: op
+
+load: POSTWORLD
+
+authors:
+  - Velvexa
+  - MineBazaar Development Team
